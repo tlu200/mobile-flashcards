@@ -15,9 +15,14 @@ function addDeck(state, action) {
 }
 
 function addCard(state, action) {
-  const deck = state[action.title] || { title, questions: []};
+  const deck = {
+    title: action.title,
+    questions: state[action.title]
+      ? state[action.title].questions.concat([action.card])
+      : [action.card]
+  };
   return updateObject(state, {
-    [action.title]: deck.push(action.card)
+    [action.title]: deck
   });
 }
 

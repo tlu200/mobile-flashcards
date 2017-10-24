@@ -47,7 +47,7 @@ class NewDeck extends Component {
         />
         <Button text="Create Deck"
                 onPress={this.submit}
-                style={styles.submitBtn}></Button>
+                style={styles.submitBtn} />
       </KeyboardAvoidingView>
     )
   }
