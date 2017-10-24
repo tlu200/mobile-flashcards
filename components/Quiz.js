@@ -3,9 +3,12 @@ import { View, Text } from 'react-native';
 
 class Quiz extends Component {
   render() {
+    const { navigation } = this.props;
+    const { title, questions } = navigation.state.params;
+
     return (
       <View>
-        <Text>Quiz</Text>
+        <Text>Quiz title={title}, questions={JSON.stringify(questions)}</Text>
       </View>
     )
   }
