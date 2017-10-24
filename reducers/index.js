@@ -6,13 +6,12 @@ function receiveDecks(state, action) {
 }
 
 function addDeck(state, action) {
-  return {
-    ...state,
-    ...{
+  return updateObject(state, {
+    [action.title]: {
       title: action.title,
       questions: []
     }
-  }
+  });
 }
 
 function addCard(state, action) {
