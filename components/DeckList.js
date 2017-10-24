@@ -43,6 +43,16 @@ class DeckList extends Component {
       return <AppLoading />
     }
 
+    if (!decks || !Object.keys(decks).length) {
+      return (
+        <View style={[styles.container, {justifyContent: 'center'}]}>
+          <Text style={{fontSize: 40, textAlign: 'center'}}>
+            There is no deck yet
+          </Text>
+        </View>
+      );
+    }
+
     return (
       <View style={styles.container}>
         <FlatList
