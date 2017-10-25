@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
 
-function Button ({ onPress, style, text }) {
+function Button ({ onPress, style, text, textStyle }) {
   return (
     <TouchableOpacity
       style={[Platform.OS === 'ios' ? styles.iosSubmitBtn: styles.AndroidSubmitBtn, style]}
       onPress={onPress}>
-      <Text style={styles.submitBtnText}>{text}</Text>
+      <Text style={[styles.submitBtnText, textStyle]}>{text}</Text>
     </TouchableOpacity>
   );
 }
