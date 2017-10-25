@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 import Button from '../components/Button';
+import { clearLocalNotification, setLocalNotification } from '../utils/helper';
 
 class Quiz extends Component {
   state = {
@@ -11,6 +12,10 @@ class Quiz extends Component {
     showAnswer: false,
     resultPage: false
   };
+
+  componentDidMount() {
+    clearLocalNotification().then(setLocalNotification);
+  }
 
   toggleAnswer = () => {
     this.setState({showAnswer: !this.state.showAnswer});

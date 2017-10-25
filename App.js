@@ -6,6 +6,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import reducer from './reducers';
+import { setLocalNotification } from './utils/helper';
 import DeckList from './components/DeckList';
 import NewDeck from './components/NewDeck';
 import Deck from './components/Deck';
@@ -61,6 +62,9 @@ const MainNavigator = StackNavigator({
 });
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     return (
       <Provider store={createStore(reducer)}>
